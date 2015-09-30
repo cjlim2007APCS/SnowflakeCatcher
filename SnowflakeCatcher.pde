@@ -3,7 +3,7 @@ boolean delete = false;
 void setup()
 {
   size(300,300);
-  snow = new Snowflake[1000];
+  snow = new Snowflake[75];
   for(int i=0;i<snow.length;i++) {
     snow[i]= new Snowflake();
   }
@@ -26,15 +26,20 @@ void draw()
       delete = false;
     }
   }
+  //noLoop();
 }
 void mouseDragged()
 {
+  strokeWeight(5);
   if (delete == true) {
     stroke(0);
+    strokeWeight(100);
   } else {
     stroke(255);
   }
   point(mouseX, mouseY);
+  strokeWeight(1);
+  stroke(0);
 }
 
 class Snowflake
@@ -51,7 +56,7 @@ class Snowflake
   {
     fill(255);
     stroke(0);
-    ellipse(x,y,5,5);
+    ellipse(x,y,3,3);
   }
   void lookDown()
   {
@@ -64,7 +69,7 @@ class Snowflake
   void erase()
   {
     fill(0);
-    ellipse(x, y, 7, 7);
+    ellipse(x, y, 6, 6);
   }
   void move()
   {
