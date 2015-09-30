@@ -1,5 +1,5 @@
 Snowflake[] snow;
-boolean delete = false;
+boolean overwrite = false;
 void setup()
 {
   size(300,300);
@@ -21,9 +21,9 @@ void draw()
   }
   if (keyPressed) {
     if (key == 'p') {
-      delete = true;
+      overwrite = true;
     } else {
-      delete = false;
+      overwrite = false;
     }
   }
   //noLoop();
@@ -31,7 +31,7 @@ void draw()
 void mouseDragged()
 {
   strokeWeight(5);
-  if (delete == true) {
+  if (overwrite == true) {
     stroke(0);
     strokeWeight(100);
   } else {
