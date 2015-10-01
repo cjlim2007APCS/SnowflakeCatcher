@@ -11,7 +11,6 @@ void setup()
 }
 void draw()
 {
-  //background(0);
   for(int i=0;i<snow.length;i++) {
     snow[i].erase();
     snow[i].lookDown();
@@ -26,7 +25,6 @@ void draw()
       overwrite = false;
     }
   }
-  //noLoop();
 }
 void mouseDragged()
 {
@@ -56,7 +54,7 @@ class Snowflake
   {
     fill(255);
     stroke(0);
-    ellipse(x,y,3,3);
+    ellipse(x,y,5,5);
   }
   void lookDown()
   {
@@ -69,7 +67,7 @@ class Snowflake
   void erase()
   {
     fill(0);
-    ellipse(x, y, 6, 6);
+    ellipse(x, y, 7, 7);
   }
   void move()
   {
